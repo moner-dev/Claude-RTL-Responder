@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- TODO: Add extension icon file to project root or icons/ folder -->
-  <img src="icons/icon-96.png" alt="Claude RTL Responder Logo" width="96"/>
+  <img src="src/icons/icon-96.png" alt="Claude RTL Responder Logo" width="96"/>
 
   <h1>Claude RTL Responder</h1>
   <h3>
@@ -21,6 +21,29 @@
   <img src="https://img.shields.io/badge/STATUS-Beta-orange?style=for-the-badge"/>
 
   <br/><br/>
+
+  <!-- Download Buttons -->
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/moner-dev/Claude-RTL-Responder/releases/latest/download/claude-rtl-responder-firefox-v0.1.0.zip">
+          <img src="https://img.shields.io/badge/Download_for_Firefox-2563eb?style=for-the-badge&logo=firefox&logoColor=white" alt="Download for Firefox"/>
+        </a>
+        <br/>
+        <img src="https://img.shields.io/github/downloads/moner-dev/Claude-RTL-Responder/latest/claude-rtl-responder-firefox-v0.1.0.zip/total?style=flat-square&label=downloads&color=gray" alt="Firefox Downloads"/>
+      </td>
+      <td width="20"></td>
+      <td align="center">
+        <a href="https://github.com/moner-dev/Claude-RTL-Responder/releases/latest/download/claude-rtl-responder-chrome-v0.1.0.zip">
+          <img src="https://img.shields.io/badge/Download_for_Chrome-2563eb?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Download for Chrome"/>
+        </a>
+        <br/>
+        <img src="https://img.shields.io/github/downloads/moner-dev/Claude-RTL-Responder/latest/claude-rtl-responder-chrome-v0.1.0.zip/total?style=flat-square&label=downloads&color=gray" alt="Chrome Downloads"/>
+      </td>
+    </tr>
+  </table>
+
+  <br/>
 
   <a href="#-features--المميزات">Features</a> &nbsp;•&nbsp;
   <a href="#-screenshots--لقطات-الشاشة">Screenshots</a> &nbsp;•&nbsp;
@@ -52,7 +75,7 @@
 
 <div dir="rtl" align="right">
 
-**Claude RTL Responder** إضافة متصفح Firefox متكاملة تُحسِّن تجربة استخدام Claude.ai للمستخدمين الناطقين بالعربية. تكتشف الأداة النصوص العربية تلقائياً وتُطبِّق اتجاه RTL الصحيح، مع الحفاظ على اتجاه LTR لكتل الكود والمحتوى التقني والمصطلحات الإنجليزية داخل السياق العربي.
+**Claude RTL Responder** إضافة متصفح متكاملة (Firefox و Chrome) تُحسِّن تجربة استخدام Claude.ai للمستخدمين الناطقين بالعربية. تكتشف الأداة النصوص العربية تلقائياً وتُطبِّق اتجاه RTL الصحيح، مع الحفاظ على اتجاه LTR لكتل الكود والمحتوى التقني والمصطلحات الإنجليزية داخل السياق العربي.
 
 تعتمد الإضافة على خوارزمية Unicode ثنائية الاتجاه المدمجة في المتصفح مع معالجة ذكية للمحتوى المختلط، وتوفر تخصيصاً كاملاً لحجم الخط، وتباعد الأسطر، والمؤشرات البصرية عبر صفحة إعدادات مخصصة.
 
@@ -60,7 +83,7 @@
 
 <br/>
 
-**Claude RTL Responder** is a comprehensive Firefox browser extension that enhances the Claude.ai experience for Arabic-speaking users. It automatically detects Arabic text and applies the correct RTL direction, while preserving LTR for code blocks, technical content, and English terms within Arabic contexts.
+**Claude RTL Responder** is a comprehensive browser extension (Firefox & Chrome) that enhances the Claude.ai experience for Arabic-speaking users. It automatically detects Arabic text and applies the correct RTL direction, while preserving LTR for code blocks, technical content, and English terms within Arabic contexts.
 
 Built on the browser's native Unicode Bidirectional Algorithm with intelligent mixed-content handling, the extension offers full customization of font size, line spacing, and visual indicators through a dedicated settings page.
 
@@ -231,35 +254,75 @@ Built on the browser's native Unicode Bidirectional Algorithm with intelligent m
 
 ### B. From GitHub (Developer Edition) / من GitHub (نسخة المطور)
 
-<div dir="rtl" align="right">
+#### Firefox
 
-**خطوات التثبيت:**
-
-1. حمِّل أحدث إصدار ZIP من [صفحة الإصدارات](https://github.com/moner-dev/Claude-RTL-Responder/releases)
-2. فُكَّ ضغط الملف في مجلد
-3. افتح Firefox وانتقل إلى `about:debugging#/runtime/this-firefox`
-4. انقر على **"Load Temporary Add-on..."**
-5. اختر ملف `manifest.json` من المجلد المُستخرَج
-6. تم تثبيت الإضافة!
-
-</div>
-
-<br/>
+<table>
+<tr>
+<td width="50%" valign="top">
 
 **Installation Steps:**
 
-1. Download the latest release ZIP from the [Releases page](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+1. Download `claude-rtl-responder-firefox-v*.zip` from [Releases](https://github.com/moner-dev/Claude-RTL-Responder/releases)
 2. Extract the ZIP to a folder
-3. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
+3. Open Firefox → `about:debugging#/runtime/this-firefox`
 4. Click **"Load Temporary Add-on..."**
-5. Select the `manifest.json` file from the extracted folder
-6. The extension is now installed!
+5. Select `manifest.json` from extracted folder
+6. Done!
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+**خطوات التثبيت:**
+
+1. حمِّل `claude-rtl-responder-firefox-v*.zip` من [الإصدارات](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. فُكَّ ضغط الملف في مجلد
+3. افتح Firefox ← `about:debugging#/runtime/this-firefox`
+4. انقر على **"Load Temporary Add-on..."**
+5. اختر ملف `manifest.json` من المجلد
+6. تم!
+
+</td>
+</tr>
+</table>
+
+#### Chrome / Edge
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Installation Steps:**
+
+1. Download `claude-rtl-responder-chrome-v*.zip` from [Releases](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. Extract the ZIP to a folder
+3. Open Chrome → `chrome://extensions`
+4. Enable **"Developer mode"** (top right toggle)
+5. Click **"Load unpacked"**
+6. Select the extracted folder
+7. Done!
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+**خطوات التثبيت:**
+
+1. حمِّل `claude-rtl-responder-chrome-v*.zip` من [الإصدارات](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. فُكَّ ضغط الملف في مجلد
+3. افتح Chrome ← `chrome://extensions`
+4. فعّل **"Developer mode"** (الزر في أعلى اليمين)
+5. انقر على **"Load unpacked"**
+6. اختر المجلد المستخرج
+7. تم!
+
+</td>
+</tr>
+</table>
 
 <br/>
 
-> ⚠️ **Note:** Temporary add-ons are removed when Firefox restarts. For permanent installation, use the Firefox Add-ons Store version (coming soon).
+> ⚠️ **Note:** Temporary/unpacked extensions are removed when the browser restarts. For permanent installation, use the browser store versions (coming soon).
 >
-> **ملاحظة:** الإضافات المؤقتة تُحذف عند إعادة تشغيل Firefox. للتثبيت الدائم، استخدم نسخة متجر Firefox (قريباً).
+> **ملاحظة:** الإضافات المؤقتة تُحذف عند إعادة تشغيل المتصفح. للتثبيت الدائم، استخدم نسخ المتاجر (قريباً).
 
 ---
 
@@ -380,31 +443,42 @@ The extension uses isolated modules for maintainability:
 
 ```
 claude-rtl-responder/
-├── manifest.json           # Extension manifest (MV3)
-├── background.js           # Service worker
-├── content/
-│   ├── detector.js         # Arabic text detection
-│   ├── observer.js         # DOM mutation observer
-│   └── content.js          # Main content script
-├── popup/
-│   ├── popup.html          # Popup UI
-│   ├── popup.css           # Popup styles
-│   └── popup.js            # Popup logic
-├── options/
-│   ├── options.html        # Settings page
-│   ├── options.css         # Settings styles
-│   └── options.js          # Settings logic
-├── styles/
-│   └── rtl.css             # RTL injection styles
-├── icons/
-│   ├── icon-48.png         # Toolbar icon
-│   └── icon-96.png         # High-DPI icon
+├── src/                          # Extension source files
+│   ├── manifest.firefox.json     # Firefox manifest (MV3)
+│   ├── manifest.chrome.json      # Chrome manifest (MV3)
+│   ├── background.js             # Service worker
+│   ├── common/
+│   │   └── browser-polyfill.js   # Cross-browser API polyfill
+│   ├── content/
+│   │   ├── detector.js           # Arabic text detection
+│   │   ├── observer.js           # DOM mutation observer
+│   │   └── content.js            # Main content script
+│   ├── popup/
+│   │   ├── popup.html            # Popup UI
+│   │   ├── popup.css             # Popup styles
+│   │   └── popup.js              # Popup logic
+│   ├── options/
+│   │   ├── options.html          # Settings page
+│   │   ├── options.css           # Settings styles
+│   │   └── options.js            # Settings logic
+│   ├── styles/
+│   │   └── rtl.css               # RTL injection styles
+│   ├── icons/
+│   │   ├── icon-48.png           # Toolbar icon
+│   │   └── icon-96.png           # High-DPI icon
+│   └── INSTALL.txt               # Quick installation guide
+├── scripts/
+│   └── build.js                  # Cross-browser build script
+├── dist/                         # Build output (gitignored)
 ├── docs/
-│   └── screenshots/        # README screenshots
-├── README.md               # This file
-├── LICENSE                 # MIT License
-├── CHANGELOG.md            # Version history
-└── TESTING.md              # Testing guide
+│   └── screenshots/              # README screenshots
+├── package.json                  # Build configuration
+├── README.md                     # This file
+├── LICENSE                       # MIT License
+├── CHANGELOG.md                  # Version history
+├── CONTRIBUTING.md               # Contribution guidelines
+├── SECURITY.md                   # Security policy
+└── .gitignore                    # Git ignore rules
 ```
 
 </details>
@@ -449,14 +523,15 @@ claude-rtl-responder/
 | **Firefox 109+** | ✅ Fully Supported | مدعوم بالكامل |
 | **Firefox Developer Edition** | ✅ Supported | مدعوم |
 | **Firefox ESR (109+)** | ✅ Supported | مدعوم |
-| **Chrome / Edge** | ❌ Not Supported | غير مدعوم |
+| **Chrome 88+** | ✅ Fully Supported | مدعوم بالكامل |
+| **Edge (Chromium)** | ✅ Supported | مدعوم |
 | **Safari** | ❌ Not Supported | غير مدعوم |
 | **claude.ai** | ✅ Target Site | الموقع المستهدف |
 | **Other websites** | ❌ Not Affected | غير متأثرة |
 
-> 💡 Chrome/Edge port may be developed in the future. The extension currently uses Firefox-specific MV3 APIs.
+> 💡 Both Firefox and Chrome/Edge are fully supported with Manifest V3.
 >
-> قد يتم تطوير نسخة Chrome/Edge مستقبلاً. الإضافة حالياً تستخدم واجهات Firefox المحددة.
+> يدعم المتصفحان Firefox و Chrome/Edge بالكامل مع Manifest V3.
 
 ---
 
@@ -472,7 +547,6 @@ Contributions are welcome! Here's how you can help:
 - 💡 **Suggest features** — share your ideas
 - 🔧 **Submit PRs** — code contributions reviewed
 
-<!-- TODO: Create CONTRIBUTING.md file -->
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 </td>
@@ -513,7 +587,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - ✨ Bilingual UI (Arabic/English)
 - ✨ Persistent settings storage
 
-<!-- TODO: Create CHANGELOG.md file with full version history -->
 See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
 ---
@@ -526,7 +599,6 @@ See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
 Copyright © 2026 **MONER INTELLIGENCE SYSTEMS**
 
-<!-- TODO: Create LICENSE file -->
 See [LICENSE](LICENSE) for the full license text.
 
 </div>
@@ -665,6 +737,7 @@ node scripts/build.js all
 
 <img src="https://img.shields.io/badge/Made_with-JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black"/>
 <img src="https://img.shields.io/badge/For-Firefox-ff7139?style=for-the-badge&logo=firefox&logoColor=white"/>
+<img src="https://img.shields.io/badge/For-Chrome-4285f4?style=for-the-badge&logo=googlechrome&logoColor=white"/>
 <img src="https://img.shields.io/badge/©_2026-MONER_INTELLIGENCE_SYSTEMS-2563eb?style=for-the-badge"/>
 
 <!-- TODO: Add visitor counter badge once repository is public -->
