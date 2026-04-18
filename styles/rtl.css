@@ -1,0 +1,206 @@
+/**
+ * Claude RTL Responder - RTL Styles
+ *
+ * Base stylesheet injected into claude.ai pages.
+ * Works in conjunction with inline styles applied by content script.
+ *
+ * Uses dir="auto" approach to leverage browser's native Unicode Bidi Algorithm
+ * for automatic direction detection based on text content.
+ *
+ * SELECTORS: Verified against live claude.ai DOM (2024)
+ * - .font-claude-response (NOT .font-claude-message - outdated)
+ * - .font-claude-response-body (paragraphs)
+ * - .font-user-message (user messages)
+ * - [data-testid="user-message"] (user message container)
+ */
+
+/* ==========================================================================
+   RTL Active Elements
+   Applied to elements marked by the content script
+   ========================================================================== */
+
+.claude-rtl-active {
+  direction: auto !important;
+  unicode-bidi: isolate !important;
+  text-align: start !important;
+}
+
+/* Ensure proper text alignment follows direction */
+.claude-rtl-active p,
+.claude-rtl-active div,
+.claude-rtl-active span,
+.claude-rtl-active li {
+  text-align: start;
+}
+
+/* ==========================================================================
+   Claude Response Styles (VERIFIED selectors)
+   ========================================================================== */
+
+/* Claude's response container */
+.font-claude-response.claude-rtl-active {
+  direction: auto !important;
+  unicode-bidi: isolate !important;
+  text-align: start !important;
+}
+
+/* Paragraphs inside Claude's response */
+.font-claude-response-body.claude-rtl-active {
+  direction: auto !important;
+  unicode-bidi: isolate !important;
+  text-align: start !important;
+}
+
+/* ==========================================================================
+   User Message Styles (VERIFIED selectors)
+   ========================================================================== */
+
+/* User's sent messages */
+[data-testid="user-message"].claude-rtl-active,
+.font-user-message.claude-rtl-active {
+  direction: auto !important;
+  unicode-bidi: isolate !important;
+  text-align: start !important;
+}
+
+/* ==========================================================================
+   Protected Elements - Always LTR
+   Code blocks, inline code, and technical content must remain left-to-right
+   ========================================================================== */
+
+/* Code blocks */
+pre,
+code,
+pre *,
+code * {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
+
+/* Syntax highlighted code */
+[data-language],
+.hljs,
+.code-block,
+.highlight {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
+
+/* Math expressions (KaTeX) */
+.katex,
+.katex-mathml,
+.katex-html,
+math,
+.MathJax {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Ensure code inside RTL containers stays LTR */
+.claude-rtl-active pre,
+.claude-rtl-active code,
+.claude-rtl-active [data-language],
+.claude-rtl-active .hljs,
+.claude-rtl-active .code-block,
+.font-claude-response pre,
+.font-claude-response code,
+.font-claude-response-body pre,
+.font-claude-response-body code,
+[dir="rtl"] pre,
+[dir="rtl"] code,
+[dir="rtl"] [data-language],
+[dir="auto"] pre,
+[dir="auto"] code,
+[dir="auto"] [data-language] {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
+
+/* ==========================================================================
+   Input Fields
+   User typing area should respect auto direction
+   ========================================================================== */
+
+/* Contenteditable input (Claude's main input) */
+[contenteditable="true"].claude-rtl-active {
+  direction: auto !important;
+  unicode-bidi: plaintext !important;
+  text-align: start !important;
+}
+
+/* Textarea fallback */
+textarea.claude-rtl-active {
+  direction: auto !important;
+  unicode-bidi: plaintext !important;
+  text-align: start !important;
+}
+
+/* ==========================================================================
+   Lists and Block Elements
+   Ensure proper alignment in RTL context
+   ========================================================================== */
+
+.claude-rtl-active ul,
+.claude-rtl-active ol,
+.font-claude-response ul,
+.font-claude-response ol,
+.font-claude-response-body ul,
+.font-claude-response-body ol {
+  text-align: start;
+  padding-inline-start: 2em;
+  padding-inline-end: 0;
+}
+
+.claude-rtl-active blockquote,
+.font-claude-response blockquote,
+.font-claude-response-body blockquote {
+  text-align: start;
+  border-inline-start: 4px solid #e5e5e5;
+  border-inline-end: none;
+  padding-inline-start: 1em;
+  padding-inline-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+/* ==========================================================================
+   Links and Interactive Elements
+   ========================================================================== */
+
+.claude-rtl-active a {
+  /* Links should inherit direction */
+  unicode-bidi: isolate;
+}
+
+/* ==========================================================================
+   Tables
+   Tables should remain LTR for consistency
+   ========================================================================== */
+
+.claude-rtl-active table,
+.claude-rtl-active th,
+.claude-rtl-active td,
+.font-claude-response table,
+.font-claude-response-body table {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ==========================================================================
+   SVG, Images, and Iframes
+   These should not be affected by direction
+   ========================================================================== */
+
+.claude-rtl-active svg,
+.claude-rtl-active img,
+.claude-rtl-active iframe {
+  direction: ltr;
+}
+
+/* Artifact iframes - do not style (cross-origin) */
+iframe {
+  direction: ltr !important;
+}

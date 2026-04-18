@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=300">
+  <title>Claude RTL Responder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="header">
+      <div class="header-content">
+        <h1 class="title">مُعدِّل RTL لـ Claude</h1>
+        <span class="version">v0.1.0</span>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- Mode Selector -->
+      <div class="mode-section">
+        <label class="mode-label">
+          <span class="label-ar">الوضع</span>
+          <span class="label-en">Mode</span>
+        </label>
+
+        <div class="mode-selector" role="radiogroup" aria-label="Select mode">
+          <button
+            type="button"
+            id="modeArabic"
+            class="mode-button mode-button-arabic active"
+            role="radio"
+            aria-checked="true"
+            data-mode="arabic"
+          >
+            <span class="mode-text">عربي</span>
+            <span class="mode-check" aria-hidden="true">✓</span>
+          </button>
+          <button
+            type="button"
+            id="modeEnglish"
+            class="mode-button mode-button-english"
+            role="radio"
+            aria-checked="false"
+            data-mode="english"
+          >
+            <span class="mode-text">English</span>
+            <span class="mode-check" aria-hidden="true">✓</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Status indicator -->
+      <div class="status-section">
+        <div id="statusIndicator" class="status-indicator status-arabic">
+          <span class="status-dot"></span>
+          <span class="status-text">
+            <span class="status-text-ar">مُفعَّل</span>
+            <span class="status-text-en">Arabic Mode Active</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Keyboard shortcuts hint -->
+      <div class="shortcuts-hint">
+        <div class="shortcut-row">
+          <span class="shortcut-label">تبديل الوضع</span>
+          <kbd>Alt+G</kbd>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-label">فتح النافذة</span>
+          <kbd>Alt+O</kbd>
+        </div>
+      </div>
+
+      <!-- Advanced Settings Button -->
+      <button type="button" id="openSettings" class="settings-button">
+        <span class="settings-icon">⚙️</span>
+        <span class="settings-text">
+          <span class="settings-text-ar">إعدادات متقدمة</span>
+          <span class="settings-text-en">Advanced Settings</span>
+        </span>
+      </button>
+
+      <!-- Info section -->
+      <div class="info-section">
+        <p class="info-text-ar">يُحسِّن عرض النصوص العربية في محادثات Claude</p>
+        <p class="info-text-en">Improves Arabic text display in Claude conversations</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">Arabic RTL Support for Claude.ai</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
