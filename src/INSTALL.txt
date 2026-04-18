@@ -5,15 +5,24 @@
 
 [ENGLISH]
 
+FIREFOX:
 1. Extract this ZIP to a permanent folder
 2. Open Firefox → about:debugging#/runtime/this-firefox
 3. Click "Load Temporary Add-on..."
 4. Select "manifest.json" from extracted folder
 5. Visit https://claude.ai — Done!
 
+CHROME:
+1. Extract this ZIP to a permanent folder
+2. Open Chrome → chrome://extensions
+3. Enable "Developer mode" (top right toggle)
+4. Click "Load unpacked"
+5. Select the extracted folder
+6. Visit https://claude.ai — Done!
+
 Shortcuts: Alt+G (toggle RTL) | Alt+O (options)
 
-Note: Re-load after Firefox restart.
+Note: Temporary extensions are removed on browser restart.
 
 Full guide: https://github.com/moner-dev/Claude-RTL-Responder
 
@@ -21,15 +30,24 @@ Full guide: https://github.com/moner-dev/Claude-RTL-Responder
 
 [العربية]
 
+فايرفوكس:
 ١. استخرج الملف إلى مجلد دائم
 ٢. افتح Firefox ← about:debugging#/runtime/this-firefox
 ٣. اضغط "Load Temporary Add-on..."
 ٤. اختر ملف "manifest.json"
 ٥. زُر https://claude.ai — تم!
 
+كروم:
+١. استخرج الملف إلى مجلد دائم
+٢. افتح Chrome ← chrome://extensions
+٣. فعّل "Developer mode" (الزر في أعلى اليمين)
+٤. اضغط "Load unpacked"
+٥. اختر المجلد المستخرج
+٦. زُر https://claude.ai — تم!
+
 الاختصارات: Alt+G (تبديل RTL) | Alt+O (الإعدادات)
 
-ملاحظة: أعد التحميل بعد إعادة تشغيل المتصفح.
+ملاحظة: الإضافات المؤقتة تُحذف عند إعادة تشغيل المتصفح.
 
 الدليل الكامل: https://github.com/moner-dev/Claude-RTL-Responder
 
