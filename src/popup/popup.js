@@ -74,7 +74,7 @@
    */
   async function sendModeChange(mode) {
     try {
-      const tabs = await browser.tabs.query({ active: true, currentWindow: true });
+      const tabs = await browserAPI.tabs.query({ active: true, currentWindow: true });
 
       if (tabs.length === 0) {
         if (DEBUG) console.log(LOG_PREFIX, 'No active tab found');
@@ -89,7 +89,7 @@
         return null;
       }
 
-      const response = await browser.tabs.sendMessage(tab.id, {
+      const response = await browserAPI.tabs.sendMessage(tab.id, {
         type: 'MODE_CHANGE',
         mode: mode
       });
@@ -107,7 +107,7 @@
    */
   async function loadMode() {
     try {
-      const result = await browser.storage.local.get([STORAGE_KEY, OLD_STORAGE_KEY]);
+      const result = await browserAPI.storage.local.get([STORAGE_KEY, OLD_STORAGE_KEY]);
 
       // Check for new storage format first
       if (result[STORAGE_KEY]) {
@@ -120,8 +120,8 @@
         if (DEBUG) console.log(LOG_PREFIX, 'Migrating old storage format:', migratedMode);
 
         // Save in new format and remove old key
-        await browser.storage.local.set({ [STORAGE_KEY]: migratedMode });
-        await browser.storage.local.remove(OLD_STORAGE_KEY);
+        await browserAPI.storage.local.set({ [STORAGE_KEY]: migratedMode });
+        await browserAPI.storage.local.remove(OLD_STORAGE_KEY);
 
         return migratedMode;
       }
@@ -140,7 +140,7 @@
    */
   async function saveMode(mode) {
     try {
-      await browser.storage.local.set({ [STORAGE_KEY]: mode });
+      await browserAPI.storage.local.set({ [STORAGE_KEY]: mode });
       if (DEBUG) console.log(LOG_PREFIX, 'Saved mode:', mode);
     } catch (error) {
       console.error(LOG_PREFIX, 'Error saving mode:', error);
@@ -214,7 +214,7 @@
     const settingsBtn = document.getElementById('openSettings');
     if (settingsBtn) {
       settingsBtn.addEventListener('click', () => {
-        browser.runtime.openOptionsPage();
+        browserAPI.runtime.openOptionsPage();
       });
     }
 

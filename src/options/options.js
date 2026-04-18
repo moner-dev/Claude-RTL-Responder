@@ -113,13 +113,13 @@
    */
   async function broadcastSettingsChange() {
     try {
-      const tabs = await browser.tabs.query({
+      const tabs = await browserAPI.tabs.query({
         url: ['*://claude.ai/*', '*://*.claude.ai/*']
       });
 
       for (const tab of tabs) {
         try {
-          await browser.tabs.sendMessage(tab.id, {
+          await browserAPI.tabs.sendMessage(tab.id, {
             type: 'SETTINGS_CHANGE',
             settings: currentSettings
           });
@@ -233,7 +233,7 @@
    */
   async function saveSettings() {
     try {
-      await browser.storage.local.set({
+      await browserAPI.storage.local.set({
         [STORAGE_KEYS.FONT_SIZE]: currentSettings.fontSize,
         [STORAGE_KEYS.LINE_SPACING]: currentSettings.lineSpacing,
         [STORAGE_KEYS.INDICATOR]: currentSettings.indicator
@@ -254,7 +254,7 @@
    */
   async function saveUiLanguage() {
     try {
-      await browser.storage.local.set({
+      await browserAPI.storage.local.set({
         [STORAGE_KEYS.UI_LANG]: currentUiLang
       });
       if (DEBUG) console.log(LOG_PREFIX, 'UI language saved:', currentUiLang);
@@ -268,7 +268,7 @@
    */
   async function loadSettings() {
     try {
-      const result = await browser.storage.local.get([
+      const result = await browserAPI.storage.local.get([
         STORAGE_KEYS.FONT_SIZE,
         STORAGE_KEYS.LINE_SPACING,
         STORAGE_KEYS.INDICATOR,

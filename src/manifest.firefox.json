@@ -17,7 +17,7 @@
     "*://*.claude.ai/*"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["common/browser-polyfill.js", "background.js"]
   },
   "action": {
     "default_popup": "popup/popup.html",
@@ -52,6 +52,7 @@
         "*://*.claude.ai/*"
       ],
       "js": [
+        "common/browser-polyfill.js",
         "content/detector.js",
         "content/observer.js",
         "content/content.js"

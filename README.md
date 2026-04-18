@@ -15,6 +15,7 @@
   <img src="https://img.shields.io/badge/VERSION-v0.1.0-2563eb?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/FIREFOX-109+-ff7139?style=for-the-badge&logo=firefox&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CHROME-MV3-4285f4?style=for-the-badge&logo=googlechrome&logoColor=white"/>
   <img src="https://img.shields.io/badge/MANIFEST-MV3-purple?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/JAVASCRIPT-ES6+-f7df1e?style=for-the-badge&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/STATUS-Beta-orange?style=for-the-badge"/>
@@ -565,6 +566,65 @@ See [LICENSE](LICENSE) for the full license text.
 | [**DeadBYTE**](https://github.com/moner-dev/DeadByte) | Smart system analysis & cleanup for Windows | أداة تحليل وتنظيف ذكية لـ Windows |
 | [**MyWorld Password Manager**](https://github.com/moner-dev/MyWorld-Password-Manager) | Secure local password manager | مدير كلمات مرور محلي آمن |
 | [**Professional Label Design Print**](https://github.com/moner-dev/Professional-Label-Design-Print) | Professional label design & printing | تصميم وطباعة ملصقات احترافية |
+
+---
+
+## 🔨 Building from Source / البناء من المصدر
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+```bash
+# Clone the repository
+git clone https://github.com/moner-dev/Claude-RTL-Responder.git
+cd Claude-RTL-Responder
+
+# Build for Firefox
+node scripts/build.js firefox
+
+# Build for Chrome
+node scripts/build.js chrome
+
+# Build both
+node scripts/build.js all
+```
+
+**Output:**
+- `dist/firefox/` — Unpacked Firefox extension
+- `dist/chrome/` — Unpacked Chrome extension
+- `dist/claude-rtl-responder-firefox-v*.zip`
+- `dist/claude-rtl-responder-chrome-v*.zip`
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+```bash
+# استنساخ المستودع
+git clone https://github.com/moner-dev/Claude-RTL-Responder.git
+cd Claude-RTL-Responder
+
+# البناء لـ Firefox
+node scripts/build.js firefox
+
+# البناء لـ Chrome
+node scripts/build.js chrome
+
+# بناء الاثنين
+node scripts/build.js all
+```
+
+**المخرجات:**
+- `dist/firefox/` — إضافة Firefox غير مضغوطة
+- `dist/chrome/` — إضافة Chrome غير مضغوطة
+- `dist/claude-rtl-responder-firefox-v*.zip`
+- `dist/claude-rtl-responder-chrome-v*.zip`
+
+</td>
+</tr>
+</table>
+
+> **Requirements:** Node.js 14+ | **المتطلبات:** Node.js 14+
 
 ---
 

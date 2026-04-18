@@ -1,0 +1,38 @@
+================================================================================
+   CLAUDE RTL RESPONDER - QUICK INSTALL GUIDE
+   دليل التثبيت السريع
+================================================================================
+
+[ENGLISH]
+
+1. Extract this ZIP to a permanent folder
+2. Open Firefox → about:debugging#/runtime/this-firefox
+3. Click "Load Temporary Add-on..."
+4. Select "manifest.json" from extracted folder
+5. Visit https://claude.ai — Done!
+
+Shortcuts: Alt+G (toggle RTL) | Alt+O (options)
+
+Note: Re-load after Firefox restart.
+
+Full guide: https://github.com/moner-dev/Claude-RTL-Responder
+
+--------------------------------------------------------------------------------
+
+[العربية]
+
+١. استخرج الملف إلى مجلد دائم
+٢. افتح Firefox ← about:debugging#/runtime/this-firefox
+٣. اضغط "Load Temporary Add-on..."
+٤. اختر ملف "manifest.json"
+٥. زُر https://claude.ai — تم!
+
+الاختصارات: Alt+G (تبديل RTL) | Alt+O (الإعدادات)
+
+ملاحظة: أعد التحميل بعد إعادة تشغيل المتصفح.
+
+الدليل الكامل: https://github.com/moner-dev/Claude-RTL-Responder
+
+================================================================================
+(c) 2026 MONER INTELLIGENCE SYSTEMS | github.com/moner-dev
+================================================================================

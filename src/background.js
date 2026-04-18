@@ -9,6 +9,16 @@
  * Values: MODES.ARABIC | MODES.ENGLISH (default: MODES.ARABIC)
  */
 
+// Load polyfill for Chrome service worker context
+// Firefox loads this via manifest background.scripts array
+try {
+  if (typeof importScripts === 'function') {
+    importScripts('common/browser-polyfill.js');
+  }
+} catch (e) {
+  // Polyfill already loaded or not in service worker context
+}
+
 // Debug flag - set to true during development for console output
 const DEBUG = false;
 
@@ -23,20 +33,20 @@ const MODES = Object.freeze({
 
 const DEFAULT_MODE = MODES.ARABIC;
 
-browser.commands.onCommand.addListener(async (command) => {
+browserAPI.commands.onCommand.addListener(async (command) => {
   if (command !== 'toggle-mode') return;
 
   try {
     // Read current mode (default to MODES.ARABIC if never set)
-    const stored = await browser.storage.local.get(STORAGE_KEY);
+    const stored = await browserAPI.storage.local.get(STORAGE_KEY);
     const currentMode = stored[STORAGE_KEY] === MODES.ENGLISH ? MODES.ENGLISH : MODES.ARABIC;
     const newMode = currentMode === MODES.ARABIC ? MODES.ENGLISH : MODES.ARABIC;
 
     // Persist the new mode
-    await browser.storage.local.set({ [STORAGE_KEY]: newMode });
+    await browserAPI.storage.local.set({ [STORAGE_KEY]: newMode });
 
     // Notify the active claude.ai tab (if any)
-    const tabs = await browser.tabs.query({
+    const tabs = await browserAPI.tabs.query({
       active: true,
       currentWindow: true,
       url: ['*://claude.ai/*', '*://*.claude.ai/*']
@@ -44,7 +54,7 @@ browser.commands.onCommand.addListener(async (command) => {
 
     for (const tab of tabs) {
       try {
-        await browser.tabs.sendMessage(tab.id, {
+        await browserAPI.tabs.sendMessage(tab.id, {
           type: 'MODE_CHANGE',
           mode: newMode
         });

@@ -1,0 +1,28 @@
+{
+  "name": "claude-rtl-responder",
+  "version": "0.1.0",
+  "description": "Browser extension for Arabic RTL support in Claude.ai",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js all",
+    "build:firefox": "node scripts/build.js firefox",
+    "build:chrome": "node scripts/build.js chrome"
+  },
+  "keywords": [
+    "browser-extension",
+    "firefox",
+    "chrome",
+    "rtl",
+    "arabic",
+    "claude"
+  ],
+  "author": "M.O.N.E.R <moner.intelligence@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moner-dev/Claude-RTL-Responder.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

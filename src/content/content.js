@@ -186,7 +186,7 @@
    */
   async function loadSettings() {
     try {
-      const result = await browser.storage.local.get([
+      const result = await browserAPI.storage.local.get([
         SETTINGS_KEYS.FONT_SIZE,
         SETTINGS_KEYS.LINE_SPACING,
         SETTINGS_KEYS.INDICATOR
@@ -391,7 +391,7 @@
    */
   async function loadMode() {
     try {
-      const result = await browser.storage.local.get([STORAGE_KEY, OLD_STORAGE_KEY]);
+      const result = await browserAPI.storage.local.get([STORAGE_KEY, OLD_STORAGE_KEY]);
 
       // Check for new storage format first
       if (result[STORAGE_KEY]) {
@@ -405,8 +405,8 @@
         if (DEBUG) console.log(LOG_PREFIX, 'Migrating old storage format:', migratedMode);
 
         // Save in new format and remove old key
-        await browser.storage.local.set({ [STORAGE_KEY]: migratedMode });
-        await browser.storage.local.remove(OLD_STORAGE_KEY);
+        await browserAPI.storage.local.set({ [STORAGE_KEY]: migratedMode });
+        await browserAPI.storage.local.remove(OLD_STORAGE_KEY);
 
         return migratedMode;
       }
@@ -424,9 +424,9 @@
    * Handle messages from popup and options page
    */
   function setupMessageListener() {
-    browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    browserAPI.runtime.onMessage.addListener((message, sender, sendResponse) => {
       // Validate sender is our own extension
-      if (sender.id !== browser.runtime.id) return;
+      if (sender.id !== browserAPI.runtime.id) return;
 
       if (DEBUG) console.log(LOG_PREFIX, 'Received message:', message);
 
