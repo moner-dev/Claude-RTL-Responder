@@ -83,7 +83,7 @@ Built on the browser's native Unicode Bidirectional Algorithm with intelligent m
 
 ### 🚀 Extension in Action / الإضافة أثناء العمل
 
-<img src="Screenshots/Claude-RTL-Responder.png" alt="Claude RTL Responder in Action" width="90%"/>
+![Extension in Action](docs/screenshots/claude-preview.png)
 
 <br/><br/>
 
@@ -92,12 +92,12 @@ Built on the browser's native Unicode Bidirectional Algorithm with intelligent m
 <td align="center" width="50%">
 <strong>🔧 Loading Extension / تحميل الإضافة</strong>
 <br/><br/>
-<img src="Screenshots/This-firefox.png" alt="Loading Extension in Firefox" width="100%"/>
+<img src="docs/screenshots/this-firefox.png" alt="Loading Extension in Firefox" width="100%"/>
 </td>
 <td align="center" width="50%">
 <strong>📦 Extension Installed / الإضافة مُثبَّتة</strong>
 <br/><br/>
-<img src="Screenshots/Addons.png" alt="Extension in Add-ons" width="100%"/>
+<img src="docs/screenshots/addons.png" alt="Extension in Add-ons" width="100%"/>
 </td>
 </tr>
 <tr>
@@ -105,7 +105,7 @@ Built on the browser's native Unicode Bidirectional Algorithm with intelligent m
 <br/>
 <strong>⚙️ Advanced Settings Page / صفحة الإعدادات المتقدمة</strong>
 <br/><br/>
-<img src="Screenshots/Advanced Settings.png" alt="Advanced Settings Page" width="80%"/>
+<img src="docs/screenshots/advanced-settings.png" alt="Advanced Settings Page" width="80%"/>
 </td>
 </tr>
 </table>
