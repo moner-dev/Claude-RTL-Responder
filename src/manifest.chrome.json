@@ -3,6 +3,7 @@
   "name": "Claude RTL Responder",
   "version": "0.1.0",
   "description": "تحسين عرض النصوص العربية في Claude.ai - Improve Arabic text display on Claude.ai",
+  "minimum_chrome_version": "88",
   "permissions": [
     "storage"
   ],
