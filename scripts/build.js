@@ -169,6 +169,7 @@ function copyDirFiltered(srcDir, destDir, basePath = srcDir) {
 
 /**
  * Create ZIP archive using platform-specific command
+ * Uses forward slashes for cross-platform compatibility
  * @param {string} sourceDir - Directory to zip
  * @param {string} zipPath - Output ZIP path
  */
@@ -181,9 +182,45 @@ function createZip(sourceDir, zipPath) {
     const isWindows = process.platform === 'win32';
 
     if (isWindows) {
-        // Use PowerShell's Compress-Archive
-        const psCommand = `Compress-Archive -Path "${sourceDir}\\*" -DestinationPath "${zipPath}" -Force`;
-        execSync(`powershell -Command "${psCommand}"`, { stdio: 'pipe' });
+        // Use PowerShell with .NET ZipFile class for proper forward-slash paths
+        // Write script to temp file to avoid escaping issues
+        const tempScript = path.join(DIST_DIR, '_create_zip.ps1');
+
+        // Normalize paths for PowerShell (use single backslashes)
+        const psSourceDir = sourceDir.replace(/\//g, '\\');
+        const psZipPath = zipPath.replace(/\//g, '\\');
+
+        const psContent = `
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+$sourceDir = '${psSourceDir}'
+$zipPath = '${psZipPath}'
+
+$zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
+
+$files = Get-ChildItem -Path $sourceDir -Recurse -File
+
+foreach ($file in $files) {
+    # Get relative path by removing source directory prefix
+    $relativePath = $file.FullName.Substring($sourceDir.Length + 1)
+    # Convert backslashes to forward slashes for cross-platform ZIP compatibility
+    $entryName = $relativePath.Replace('\\', '/')
+    [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $file.FullName, $entryName, [System.IO.Compression.CompressionLevel]::Optimal) | Out-Null
+}
+
+$zip.Dispose()
+`;
+        fs.writeFileSync(tempScript, psContent, 'utf8');
+
+        try {
+            execSync(`powershell -ExecutionPolicy Bypass -File "${tempScript}"`, { stdio: 'pipe' });
+        } finally {
+            // Clean up temp script
+            if (fs.existsSync(tempScript)) {
+                fs.unlinkSync(tempScript);
+            }
+        }
     } else {
         // Use zip command on macOS/Linux
         const originalDir = process.cwd();
