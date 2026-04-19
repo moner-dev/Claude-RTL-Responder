@@ -7,6 +7,8 @@
 <br/>
 
 <img src="https://img.shields.io/badge/FIREFOX-109+-ff7139?style=for-the-badge&logo=firefox&logoColor=white"/>
+<img src="https://img.shields.io/badge/CHROME-88+-4285f4?style=for-the-badge&logo=googlechrome&logoColor=white"/>
+<img src="https://img.shields.io/badge/EDGE-Chromium-0078d7?style=for-the-badge&logo=microsoftedge&logoColor=white"/>
 <img src="https://img.shields.io/badge/WINDOWS-0078d4?style=for-the-badge&logo=windows&logoColor=white"/>
 <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white"/>
 <img src="https://img.shields.io/badge/LINUX-fcc624?style=for-the-badge&logo=linux&logoColor=black"/>
@@ -18,13 +20,20 @@
 
 ## مقدمة / Introduction
 
-<div dir="rtl" align="right">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-يشرح هذا الدليل خطوات تثبيت إضافة **Claude RTL Responder** على متصفح Firefox. تتوفر طريقتان للتثبيت: من متجر إضافات Firefox (الطريقة الموصى بها، قريباً)، أو من GitHub للمطورين والاختبار المبكر.
+This guide explains how to install the **Claude RTL Responder** extension on **Firefox** and **Chrome/Edge**. Installation methods include: browser add-on stores (recommended, coming soon), or from GitHub for developers and early testers.
 
-</div>
+</td>
+<td width="50%" valign="top" dir="rtl">
 
-This guide explains how to install the **Claude RTL Responder** extension on Firefox. Two installation methods are available: from the Firefox Add-ons Store (recommended, coming soon), or from GitHub for developers and early testers.
+يشرح هذا الدليل خطوات تثبيت إضافة **Claude RTL Responder** على متصفحات **Firefox** و **Chrome/Edge**. تتوفر طرق التثبيت: من متاجر الإضافات (الطريقة الموصى بها، قريباً)، أو من GitHub للمطورين والاختبار المبكر.
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -33,13 +42,14 @@ This guide explains how to install the **Claude RTL Responder** extension on Fir
 | Section | القسم |
 |:--------|:------|
 | [Prerequisites / المتطلبات](#-prerequisites--المتطلبات) | المتطلبات |
-| [Method 1: Firefox Add-ons Store](#-method-1-firefox-add-ons-store-recommended--الطريقة-الأولى-متجر-firefox-موصى-بها) | متجر Firefox |
-| [Method 2: Install from GitHub](#-method-2-install-from-github-developer-edition--الطريقة-الثانية-التثبيت-من-github-نسخة-المطور) | التثبيت من GitHub |
+| [Method 1: Browser Stores](#-method-1-browser-add-on-stores-recommended--الطريقة-الأولى-متاجر-الإضافات-موصى-بها) | متاجر الإضافات |
+| [Method 2: Firefox from GitHub](#-method-2-firefox-from-github--الطريقة-الثانية-firefox-من-github) | Firefox من GitHub |
+| [Method 3: Chrome/Edge from GitHub](#-method-3-chromeedge-from-github--الطريقة-الثالثة-chromeedge-من-github) | Chrome/Edge من GitHub |
 | [Post-Installation Setup](#-post-installation-configuration--الإعدادات-بعد-التثبيت) | الإعدادات بعد التثبيت |
 | [Updating](#-updating-the-extension--تحديث-الإضافة) | تحديث الإضافة |
 | [Uninstalling](#-uninstalling--إلغاء-التثبيت) | إلغاء التثبيت |
 | [Troubleshooting](#-troubleshooting--استكشاف-الأخطاء-وإصلاحها) | استكشاف الأخطاء |
-| [Compatibility](#-firefox-version-compatibility--توافق-إصدارات-firefox) | التوافق |
+| [Browser Compatibility](#-browser-compatibility--توافق-المتصفحات) | توافق المتصفحات |
 | [Platform Notes](#-platform-specific-notes--ملاحظات-حسب-نظام-التشغيل) | ملاحظات النظام |
 | [Security & Privacy](#-security--privacy--الأمان-والخصوصية) | الأمان والخصوصية |
 | [Getting Help](#-getting-help--طلب-المساعدة) | طلب المساعدة |
@@ -48,21 +58,32 @@ This guide explains how to install the **Claude RTL Responder** extension on Fir
 
 ## 📋 Prerequisites / المتطلبات
 
-<div dir="rtl" align="right">
-
-قبل التثبيت، تأكد من توفر المتطلبات التالية:
-
-- **متصفح Firefox** الإصدار 109 أو أحدث — [تنزيل Firefox](https://www.mozilla.org/firefox/)
-- **حساب Claude.ai** — [إنشاء حساب](https://claude.ai)
-- لا تحتاج لصلاحيات المسؤول (التثبيت على مستوى المتصفح فقط)
-
-</div>
+<table>
+<tr>
+<td width="50%" valign="top">
 
 Before installing, ensure you have:
 
-- **Firefox browser** version 109 or later — [Download Firefox](https://www.mozilla.org/firefox/)
+- **Firefox 109+** — [Download Firefox](https://www.mozilla.org/firefox/)
+- **OR Chrome 88+** — [Download Chrome](https://www.google.com/chrome/)
+- **OR Edge (Chromium)** — [Download Edge](https://www.microsoft.com/edge)
 - **A Claude.ai account** — [Sign up](https://claude.ai)
-- No administrator privileges required (browser-level install)
+- No administrator privileges required
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+قبل التثبيت، تأكد من توفر المتطلبات التالية:
+
+- **Firefox 109+** — [تنزيل Firefox](https://www.mozilla.org/firefox/)
+- **أو Chrome 88+** — [تنزيل Chrome](https://www.google.com/chrome/)
+- **أو Edge (Chromium)** — [تنزيل Edge](https://www.microsoft.com/edge)
+- **حساب Claude.ai** — [إنشاء حساب](https://claude.ai)
+- لا تحتاج لصلاحيات المسؤول
+
+</td>
+</tr>
+</table>
 
 <br/>
 
@@ -70,188 +91,177 @@ Before installing, ensure you have:
 
 | Component / المكوّن | Minimum / الحد الأدنى | Recommended / الموصى به |
 |:--------------------|:----------------------|:------------------------|
-| **Firefox** | 109 | Latest version |
+| **Firefox** | 109+ | Latest version |
+| **Chrome** | 88+ | Latest version |
+| **Edge** | 88+ (Chromium) | Latest version |
 | **OS** | Windows 10 / macOS 10.14 / Ubuntu 20.04 | Any current version |
 | **RAM** | 2 GB | 4 GB+ |
 | **Disk Space** | 5 MB | — |
 
 ---
 
-## 🟢 Method 1: Firefox Add-ons Store (Recommended) / الطريقة الأولى: متجر Firefox (موصى بها)
+## 🟢 Method 1: Browser Add-on Stores (Recommended) / الطريقة الأولى: متاجر الإضافات (موصى بها)
 
 <div align="center">
 
 ### 🟡 Coming Soon / قريباً
 
-<!-- TODO: Replace AMO URL with the actual listing once approved -->
-
 [![Firefox Add-ons](https://img.shields.io/badge/Firefox_Add--ons-Coming_Soon-ff7139?style=for-the-badge&logo=firefox&logoColor=white)](https://addons.mozilla.org)
+&nbsp;&nbsp;
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Coming_Soon-4285f4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
 
 </div>
 
 <br/>
 
-<div dir="rtl" align="right">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-الإضافة قيد المراجعة حالياً من فريق Mozilla. بمجرد الموافقة، ستكون هذه الطريقة الأسهل والأكثر أماناً للتثبيت.
-
-**الخطوات (عند التوفر):**
-
-1. زر صفحة الإضافة على متجر Firefox Add-ons
-2. انقر على زر **"Add to Firefox"**
-3. وافق على طلب الصلاحيات
-4. تم! الإضافة جاهزة للاستخدام
-
-</div>
-
-The extension is currently under review by Mozilla. Once approved, this will be the easiest and most secure installation method.
+The extension is currently under review. Once approved, this will be the easiest and most secure installation method.
 
 **Steps (when available):**
 
-1. Visit the extension's page on Firefox Add-ons Store
-2. Click the **"Add to Firefox"** button
+1. Visit the extension's page on your browser's store
+2. Click **"Add to Firefox"** or **"Add to Chrome"**
 3. Confirm the permissions prompt
 4. Done! The extension is ready to use
 
-> ℹ️ **Tip:** Extensions from AMO are automatically updated by Firefox — no manual updates needed.
->
-> **نصيحة:** إضافات متجر Firefox تُحدَّث تلقائياً — لا حاجة لتحديثات يدوية.
+> ℹ️ **Tip:** Store extensions are automatically updated — no manual updates needed.
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+الإضافة قيد المراجعة حالياً. بمجرد الموافقة، ستكون هذه الطريقة الأسهل والأكثر أماناً للتثبيت.
+
+**الخطوات (عند التوفر):**
+
+1. زر صفحة الإضافة على متجر المتصفح
+2. انقر على **"Add to Firefox"** أو **"Add to Chrome"**
+3. وافق على طلب الصلاحيات
+4. تم! الإضافة جاهزة للاستخدام
+
+> ℹ️ **نصيحة:** إضافات المتاجر تُحدَّث تلقائياً — لا حاجة لتحديثات يدوية.
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🔧 Method 2: Install from GitHub (Developer Edition) / الطريقة الثانية: التثبيت من GitHub (نسخة المطور)
+## 🦊 Method 2: Firefox from GitHub / الطريقة الثانية: Firefox من GitHub
 
-<div dir="rtl" align="right">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-هذه الطريقة متاحة الآن للمطورين والمختبرين. اتبع الخطوات التالية بدقة.
+### Step 1: Download
 
-</div>
+1. Visit [Releases](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. Download `claude-rtl-responder-firefox-v*.zip`
+3. Extract to a **permanent** folder
 
-This method is currently available for developers and testers. Follow these steps carefully.
-
-<br/>
-
-### Step 1: Download the Extension / الخطوة 1: تنزيل الإضافة
-
-<div dir="rtl" align="right">
-
-**الخيار أ: استنساخ بـ Git**
-
-</div>
-
-**Option A: Clone with Git**
-
-```bash
-git clone https://github.com/moner-dev/Claude-RTL-Responder.git
-```
-
-<br/>
-
-<div dir="rtl" align="right">
-
-**الخيار ب: تنزيل ملف ZIP**
-
-1. زر [صفحة الإصدارات](https://github.com/moner-dev/Claude-RTL-Responder/releases)
-2. نزِّل أحدث ملف `claude-rtl-responder-vX.X.X.zip`
-3. فُكَّ الضغط في مجلد دائم (مثال: `Documents/claude-rtl-responder`)
-
-</div>
-
-**Option B: Download ZIP**
-
-1. Visit the [Releases page](https://github.com/moner-dev/Claude-RTL-Responder/releases)
-2. Download the latest `claude-rtl-responder-vX.X.X.zip`
-3. Extract to a permanent folder (e.g., `Documents/claude-rtl-responder`)
-
-> ⚠️ **Important:** Choose a permanent folder location. Firefox references this folder directly — if you delete or move it, the extension will stop working.
->
-> **هام:** اختر مجلداً دائماً. Firefox يشير مباشرة لهذا المجلد — إذا حذفته أو نقلته، ستتوقف الإضافة عن العمل.
-
-<br/>
-
-### Step 2: Open Firefox Debugging Page / الخطوة 2: فتح صفحة تصحيح Firefox
-
-<div dir="rtl" align="right">
-
-1. افتح Firefox
-2. اكتب في شريط العناوين:
-
-</div>
+### Step 2: Load Extension
 
 1. Open Firefox
-2. Type in the address bar:
+2. Go to `about:debugging#/runtime/this-firefox`
+3. Click **"Load Temporary Add-on..."**
+4. Select `manifest.json` from extracted folder
 
-```
-about:debugging#/runtime/this-firefox
-```
+### Step 3: Verify
 
-3. Press <kbd>Enter</kbd>
+1. Extension icon appears in toolbar
+2. Visit [claude.ai](https://claude.ai)
+3. Test with Arabic text
 
-<!-- TODO: Add screenshot at docs/screenshots/install/01-debugging-page.png -->
+</td>
+<td width="50%" valign="top" dir="rtl">
 
-<br/>
+### الخطوة 1: التنزيل
 
-### Step 3: Load the Extension / الخطوة 3: تحميل الإضافة
+1. زر [صفحة الإصدارات](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. نزِّل `claude-rtl-responder-firefox-v*.zip`
+3. فُكَّ الضغط في مجلد **دائم**
 
-<div dir="rtl" align="right">
+### الخطوة 2: تحميل الإضافة
 
-1. انقر على زر **"Load Temporary Add-on..."**
-2. في نافذة اختيار الملفات، انتقل إلى المجلد المُستخرَج
-3. اختر ملف `manifest.json`
-4. انقر **"Open"**
+1. افتح Firefox
+2. انتقل إلى `about:debugging#/runtime/this-firefox`
+3. انقر **"Load Temporary Add-on..."**
+4. اختر `manifest.json` من المجلد المُستخرَج
 
-</div>
+### الخطوة 3: التحقق
 
-1. Click the **"Load Temporary Add-on..."** button
-2. In the file picker, navigate to the extracted folder
-3. Select the `manifest.json` file
-4. Click **"Open"**
+1. تظهر أيقونة الإضافة في شريط الأدوات
+2. زر [claude.ai](https://claude.ai)
+3. اختبر مع نص عربي
 
-<!-- TODO: Add screenshot at docs/screenshots/install/02-load-addon.png -->
+</td>
+</tr>
+</table>
 
-<br/>
-
-### Step 4: Verify Installation / الخطوة 4: التحقق من التثبيت
-
-<div dir="rtl" align="right">
-
-1. يجب أن تظهر أيقونة الإضافة في شريط أدوات Firefox
-2. انقر على الأيقونة — يجب أن تفتح النافذة المنبثقة مع مُبدِّل الوضع
-
-</div>
-
-1. The extension icon should appear in the Firefox toolbar
-2. Click the icon — the popup should open showing the mode switcher
-
-<!-- TODO: Add screenshot at docs/screenshots/install/03-popup-verified.png -->
-
-<br/>
-
-### Step 5: Test on Claude.ai / الخطوة 5: التجربة على Claude.ai
-
-<div dir="rtl" align="right">
-
-1. زر [claude.ai](https://claude.ai)
-2. ابدأ محادثة بالعربية
-3. تحقق من أن ردود Claude تُعرض من اليمين لليسار (RTL)
-
-</div>
-
-1. Visit [claude.ai](https://claude.ai)
-2. Start a conversation in Arabic
-3. Verify that Claude's responses render right-to-left (RTL)
-
-<br/>
-
-> ⚠️ **Important Limitation / تنبيه هام**
+> ⚠️ **Note:** Temporary add-ons are removed when Firefox restarts. Reload after each restart.
 >
-> <div dir="rtl" align="right">
+> **ملاحظة:** الإضافات المؤقتة تُحذف عند إعادة تشغيل Firefox. أعد التحميل بعد كل إعادة تشغيل.
+
+---
+
+## 🌐 Method 3: Chrome/Edge from GitHub / الطريقة الثالثة: Chrome/Edge من GitHub
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Step 1: Download
+
+1. Visit [Releases](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. Download `claude-rtl-responder-chrome-v*.zip`
+3. Extract to a **permanent** folder
+
+### Step 2: Load Extension
+
+1. Open Chrome/Edge
+2. Go to `chrome://extensions` (or `edge://extensions`)
+3. Enable **"Developer mode"** (top right toggle)
+4. Click **"Load unpacked"**
+5. Select the extracted folder
+
+### Step 3: Verify
+
+1. Extension icon appears in toolbar
+2. Visit [claude.ai](https://claude.ai)
+3. Test with Arabic text
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+### الخطوة 1: التنزيل
+
+1. زر [صفحة الإصدارات](https://github.com/moner-dev/Claude-RTL-Responder/releases)
+2. نزِّل `claude-rtl-responder-chrome-v*.zip`
+3. فُكَّ الضغط في مجلد **دائم**
+
+### الخطوة 2: تحميل الإضافة
+
+1. افتح Chrome/Edge
+2. انتقل إلى `chrome://extensions` (أو `edge://extensions`)
+3. فعّل **"Developer mode"** (الزر في أعلى اليمين)
+4. انقر **"Load unpacked"**
+5. اختر المجلد المُستخرَج
+
+### الخطوة 3: التحقق
+
+1. تظهر أيقونة الإضافة في شريط الأدوات
+2. زر [claude.ai](https://claude.ai)
+3. اختبر مع نص عربي
+
+</td>
+</tr>
+</table>
+
+> ⚠️ **Note:** Unpacked extensions show a warning on browser startup. This is normal for developer mode.
 >
-> الإضافات المؤقتة (Temporary Add-ons) تُحذف عند إعادة تشغيل Firefox. هذا قيد من Firefox للتطوير، وليس خللاً في الإضافة. للتثبيت الدائم، انتظر نسخة متجر Firefox أو أعد الخطوات بعد كل إعادة تشغيل.
->
-> </div>
->
-> Temporary add-ons are removed when Firefox restarts. This is a Firefox development limitation, not a bug in the extension. For permanent installation, wait for the AMO version or repeat these steps after each restart.
+> **ملاحظة:** الإضافات غير المُحزَّمة تُظهر تحذيراً عند بدء المتصفح. هذا طبيعي لوضع المطور.
 
 ---
 
@@ -370,35 +380,57 @@ Firefox auto-updates extensions by default. No action needed.
 
 ## 🗑️ Uninstalling / إلغاء التثبيت
 
-### A. Remove via about:addons / الإزالة عبر صفحة الإضافات
+### Firefox
 
-<div dir="rtl" align="right">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-1. انتقل إلى `about:addons` في شريط العناوين
-2. ابحث عن "Claude RTL Responder"
-3. انقر على قائمة النقاط الثلاث (⋮)
-4. اختر **"Remove"**
-5. أكِّد الإزالة
-
-</div>
-
-1. Navigate to `about:addons` in the address bar
+1. Navigate to `about:addons`
 2. Find "Claude RTL Responder"
 3. Click the three-dot menu (⋮)
 4. Select **"Remove"**
-5. Confirm removal
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+1. انتقل إلى `about:addons`
+2. ابحث عن "Claude RTL Responder"
+3. انقر على قائمة النقاط الثلاث (⋮)
+4. اختر **"Remove"**
+
+</td>
+</tr>
+</table>
+
+### Chrome / Edge
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+1. Navigate to `chrome://extensions` or `edge://extensions`
+2. Find "Claude RTL Responder"
+3. Click **"Remove"**
+4. Confirm removal
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+1. انتقل إلى `chrome://extensions` أو `edge://extensions`
+2. ابحث عن "Claude RTL Responder"
+3. انقر **"Remove"**
+4. أكِّد الإزالة
+
+</td>
+</tr>
+</table>
 
 <br/>
 
-### B. Remove Extracted Folder (GitHub method) / حذف المجلد المُستخرَج (طريقة GitHub)
-
-<div dir="rtl" align="right">
-
-بعد إزالة الإضافة من Firefox، يمكنك حذف المجلد الذي استخرجت فيه ملفات الإضافة.
-
-</div>
-
-After removing the extension from Firefox, you can delete the folder where you extracted the extension files.
+> 💡 After uninstalling, you can delete the extracted extension folder.
+>
+> **نصيحة:** بعد إلغاء التثبيت، يمكنك حذف مجلد الإضافة المُستخرَج.
 
 ---
 
@@ -564,17 +596,20 @@ This indicates the ZIP wasn't fully or correctly extracted.
 
 ---
 
-## 🦊 Firefox Version Compatibility / توافق إصدارات Firefox
+## 🌐 Browser Compatibility / توافق المتصفحات
 
-| Firefox Version | Support | Notes / ملاحظات |
-|:----------------|:--------|:----------------|
-| **109+** | ✅ Full | Recommended / موصى به |
-| **102 ESR** | ⚠️ Limited | Partial MV3 support |
-| **< 102** | ❌ Not supported | Please upgrade Firefox |
+| Browser | Version | Support | Notes / ملاحظات |
+|:--------|:--------|:--------|:----------------|
+| **Firefox** | 109+ | ✅ Full | Recommended / موصى به |
+| **Firefox ESR** | 102+ | ⚠️ Limited | Partial MV3 support |
+| **Chrome** | 88+ | ✅ Full | Recommended / موصى به |
+| **Edge** | 88+ | ✅ Full | Chromium-based |
+| **Safari** | — | ❌ Not supported | غير مدعوم |
+| **Opera** | 74+ | ✅ Should work | Use Chrome version |
 
-> 💡 **Tip:** Check your Firefox version by navigating to `about:support` and looking for "Version".
+> 💡 **Tip:** Check your browser version in Settings → About.
 >
-> **نصيحة:** تحقق من إصدار Firefox بالانتقال إلى `about:support` والبحث عن "Version".
+> **نصيحة:** تحقق من إصدار المتصفح في الإعدادات ← حول.
 
 ---
 
