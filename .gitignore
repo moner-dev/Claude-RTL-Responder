@@ -67,3 +67,7 @@ temp/
 NOTES.md
 TODO.local.md
 dev-notes/
+
+# Large media files (upload to YouTube/GitHub Releases instead)
+docs/demo-video.webm
+*.webm

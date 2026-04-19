@@ -118,11 +118,12 @@ Built on the browser's native Unicode Bidirectional Algorithm with intelligent m
 
 <div align="center">
 
-[![Watch Demo](https://img.shields.io/badge/🎬_Watch_Demo-Coming_Soon-2563eb?style=for-the-badge)](https://youtube.com)
+[![Claude RTL Responder Demo](https://img.youtube.com/vi/dQh49Mj3MQI/maxresdefault.jpg)](https://www.youtube.com/watch?v=dQh49Mj3MQI)
 
-> 🎥 *فيديو توضيحي شامل قريباً — يعرض كيفية استخدام الإضافة لتحسين تجربة Claude.ai بالعربية*
->
-> *Full demo video coming soon — showcasing how to use the extension to enhance the Arabic Claude.ai experience*
+**فيديو توضيحي شامل — يعرض كيفية استخدام الإضافة لتحسين تجربة Claude.ai بالعربية**
+**Full demo video — showcasing how to use the extension to enhance Claude.ai experience in Arabic**
+
+🎥 [Watch on YouTube](https://www.youtube.com/watch?v=dQh49Mj3MQI)
 
 </div>
 
