@@ -1,6 +1,5 @@
 <div align="center">
 
-  <!-- TODO: Add extension icon file to project root or icons/ folder -->
   <img src="src/icons/icon-96.png" alt="Claude RTL Responder Logo" width="96"/>
 
   <h1>Claude RTL Responder</h1>
@@ -55,11 +54,69 @@
 
 ---
 
-## 🎬 Demo Video / فيديو توضيحي
+## 📖 Introduction / المقدمة
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Claude RTL Responder** is a comprehensive browser extension (Firefox & Chrome) that enhances the Claude.ai experience for Arabic-speaking users. It automatically detects Arabic text and applies the correct RTL direction, while preserving LTR for code blocks, technical content, and English terms within Arabic contexts.
+
+Built on the browser's native Unicode Bidirectional Algorithm with intelligent mixed-content handling, the extension offers full customization of font size, line spacing, and visual indicators through a dedicated settings page.
+
+</td>
+<td width="50%" valign="top" dir="rtl">
+
+**Claude RTL Responder** إضافة متصفح متكاملة (Firefox و Chrome) تُحسِّن تجربة استخدام Claude.ai للمستخدمين الناطقين بالعربية. تكتشف الأداة النصوص العربية تلقائياً وتُطبِّق اتجاه RTL الصحيح، مع الحفاظ على اتجاه LTR لكتل الكود والمحتوى التقني والمصطلحات الإنجليزية داخل السياق العربي.
+
+تعتمد الإضافة على خوارزمية Unicode ثنائية الاتجاه المدمجة في المتصفح مع معالجة ذكية للمحتوى المختلط، وتوفر تخصيصاً كاملاً لحجم الخط، وتباعد الأسطر، والمؤشرات البصرية عبر صفحة إعدادات مخصصة.
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📸 Screenshots / لقطات الشاشة
 
 <div align="center">
 
-<!-- TODO: Replace the thumbnail URL with https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg and the video link with the actual YouTube URL once uploaded -->
+### 🚀 Extension in Action / الإضافة أثناء العمل
+
+<img src="Screenshots/Claude-RTL-Responder.png" alt="Claude RTL Responder in Action" width="90%"/>
+
+<br/><br/>
+
+<table>
+<tr>
+<td align="center" width="50%">
+<strong>🔧 Loading Extension / تحميل الإضافة</strong>
+<br/><br/>
+<img src="Screenshots/This-firefox.png" alt="Loading Extension in Firefox" width="100%"/>
+</td>
+<td align="center" width="50%">
+<strong>📦 Extension Installed / الإضافة مُثبَّتة</strong>
+<br/><br/>
+<img src="Screenshots/Addons.png" alt="Extension in Add-ons" width="100%"/>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<br/>
+<strong>⚙️ Advanced Settings Page / صفحة الإعدادات المتقدمة</strong>
+<br/><br/>
+<img src="Screenshots/Advanced Settings.png" alt="Advanced Settings Page" width="80%"/>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+## 🎬 Demo Video / فيديو توضيحي
+
+<div align="center">
 
 [![Watch Demo](https://img.shields.io/badge/🎬_Watch_Demo-Coming_Soon-2563eb?style=for-the-badge)](https://youtube.com)
 
@@ -71,44 +128,48 @@
 
 ---
 
-## 📖 Introduction / المقدمة
-
-<div dir="rtl" align="right">
-
-**Claude RTL Responder** إضافة متصفح متكاملة (Firefox و Chrome) تُحسِّن تجربة استخدام Claude.ai للمستخدمين الناطقين بالعربية. تكتشف الأداة النصوص العربية تلقائياً وتُطبِّق اتجاه RTL الصحيح، مع الحفاظ على اتجاه LTR لكتل الكود والمحتوى التقني والمصطلحات الإنجليزية داخل السياق العربي.
-
-تعتمد الإضافة على خوارزمية Unicode ثنائية الاتجاه المدمجة في المتصفح مع معالجة ذكية للمحتوى المختلط، وتوفر تخصيصاً كاملاً لحجم الخط، وتباعد الأسطر، والمؤشرات البصرية عبر صفحة إعدادات مخصصة.
-
-</div>
-
-<br/>
-
-**Claude RTL Responder** is a comprehensive browser extension (Firefox & Chrome) that enhances the Claude.ai experience for Arabic-speaking users. It automatically detects Arabic text and applies the correct RTL direction, while preserving LTR for code blocks, technical content, and English terms within Arabic contexts.
-
-Built on the browser's native Unicode Bidirectional Algorithm with intelligent mixed-content handling, the extension offers full customization of font size, line spacing, and visual indicators through a dedicated settings page.
-
----
-
 ## 📑 Table of Contents / جدول المحتويات
 
-<div dir="rtl" align="right">
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+
+| Section | Link |
+|:--------|:-----|
+| Features | [✨ Features](#-features--المميزات) |
+| Screenshots | [📸 Screenshots](#-screenshots--لقطات-الشاشة) |
+| Installation | [📥 Installation](#-installation--التثبيت) |
+| Usage | [🚀 Usage](#-usage--طريقة-الاستخدام) |
+| Technical Details | [🔧 Technical Details](#-technical-details--التفاصيل-التقنية) |
+| Project Structure | [📁 Project Structure](#-project-structure--هيكل-المشروع) |
+| Privacy | [🔒 Privacy](#-privacy--الخصوصية) |
+| Compatibility | [🌐 Compatibility](#-compatibility--التوافق) |
+| Contributing | [🤝 Contributing](#-contributing--المساهمة) |
+| Changelog | [📋 Changelog](#-changelog--سجل-التغييرات) |
+| License | [📄 License](#-license--الترخيص) |
+| Developer | [👨‍💻 Developer](#-developer--المطور) |
+
+</td>
+<td width="50%" valign="top" dir="rtl">
 
 | القسم | الرابط |
 |:------|:-------|
-| المميزات | [Features](#-features--المميزات) |
-| لقطات الشاشة | [Screenshots](#-screenshots--لقطات-الشاشة) |
-| التثبيت | [Installation](#-installation--التثبيت) |
-| طريقة الاستخدام | [Usage](#-usage--طريقة-الاستخدام) |
-| التفاصيل التقنية | [Technical Details](#-technical-details--التفاصيل-التقنية) |
-| هيكل المشروع | [Project Structure](#-project-structure--هيكل-المشروع) |
-| الخصوصية | [Privacy](#-privacy--الخصوصية) |
-| التوافق | [Compatibility](#-compatibility--التوافق) |
-| المساهمة | [Contributing](#-contributing--المساهمة) |
-| سجل التغييرات | [Changelog](#-changelog--سجل-التغييرات) |
-| الترخيص | [License](#-license--الترخيص) |
-| المطور | [Developer](#-developer--المطور) |
+| المميزات | [✨ المميزات](#-features--المميزات) |
+| لقطات الشاشة | [📸 لقطات الشاشة](#-screenshots--لقطات-الشاشة) |
+| التثبيت | [📥 التثبيت](#-installation--التثبيت) |
+| طريقة الاستخدام | [🚀 طريقة الاستخدام](#-usage--طريقة-الاستخدام) |
+| التفاصيل التقنية | [🔧 التفاصيل التقنية](#-technical-details--التفاصيل-التقنية) |
+| هيكل المشروع | [📁 هيكل المشروع](#-project-structure--هيكل-المشروع) |
+| الخصوصية | [🔒 الخصوصية](#-privacy--الخصوصية) |
+| التوافق | [🌐 التوافق](#-compatibility--التوافق) |
+| المساهمة | [🤝 المساهمة](#-contributing--المساهمة) |
+| سجل التغييرات | [📋 سجل التغييرات](#-changelog--سجل-التغييرات) |
+| الترخيص | [📄 الترخيص](#-license--الترخيص) |
+| المطور | [👨‍💻 المطور](#-developer--المطور) |
 
-</div>
+</td>
+</tr>
+</table>
 
 ---
 
@@ -186,53 +247,6 @@ Built on the browser's native Unicode Bidirectional Algorithm with intelligent m
     </td>
   </tr>
 </table>
-
----
-
-## 📸 Screenshots / لقطات الشاشة
-
-<div align="center">
-
-<!-- TODO: Add actual screenshot files to docs/screenshots/ folder before release -->
-
-### Extension in Action / الإضافة أثناء العمل
-
-<img src="docs/screenshots/01-in-action.png" alt="Claude RTL Responder in Action" width="80%"/>
-
-> *Arabic text rendered with proper RTL direction in Claude.ai*
->
-> *النص العربي يُعرض باتجاه RTL الصحيح في Claude.ai*
-
-</div>
-
-<br/>
-
-<details>
-<summary>📂 <strong>View More Screenshots / عرض المزيد من اللقطات</strong> — click to expand</summary>
-
-<br/>
-
-<div align="center">
-
-**🎛️ Popup Mode Switcher / مُبدِّل الوضع**
-<br/>
-<img src="docs/screenshots/02-popup.png" alt="Popup Mode Switcher" width="300"/>
-
-<br/><br/>
-
-**⚙️ Options Page / صفحة الإعدادات**
-<br/>
-<img src="docs/screenshots/03-options.png" alt="Options Page" width="80%"/>
-
-<br/><br/>
-
-**🌙 Dark Mode / الوضع الداكن**
-<br/>
-<img src="docs/screenshots/04-dark-mode.png" alt="Dark Mode" width="80%"/>
-
-</div>
-
-</details>
 
 ---
 
