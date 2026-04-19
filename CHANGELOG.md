@@ -13,13 +13,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.1] — 2026-04-19
+
+### 🌐 Cross-Browser Support / دعم متعدد المتصفحات
+
+Added full support for Chrome and Edge browsers alongside Firefox.
+
+تمت إضافة دعم كامل لمتصفحات Chrome و Edge بالإضافة إلى Firefox.
+
+### Added / المُضاف
+
+- **Chrome Support** — Full compatibility with Chrome 88+ and Chromium-based browsers
+- **Edge Support** — Works with Microsoft Edge (Chromium-based)
+- **Browser Polyfill** — Unified `browserAPI` namespace for cross-browser compatibility
+- **Build System** — Node.js build scripts for generating browser-specific packages
+- **Download Buttons** — Added download buttons with live counters to README
+
+### Changed / المُغيَّر
+
+- **Project Structure** — Reorganized source files into `src/` folder
+- **Manifests** — Separate manifests for Firefox (`manifest.firefox.json`) and Chrome (`manifest.chrome.json`)
+- **Documentation** — Updated all docs (README, INSTALL, CONTRIBUTING) for cross-browser support
+
+### Technical / تقني
+
+- Chrome uses `service_worker` instead of `background.scripts`
+- Added `scripts/build.js` for automated builds
+- Added `package.json` with npm build commands
+
+---
+
 ## [0.1.0] — 2026-04-18
 
 ### 🎉 Initial Release / الإصدار الأول
 
-The first public release of Claude RTL Responder — a Firefox extension that enhances Claude.ai for Arabic-speaking users.
+The first public release of Claude RTL Responder — a browser extension (Firefox & Chrome) that enhances Claude.ai for Arabic-speaking users.
 
-أول إصدار عام من Claude RTL Responder — إضافة Firefox تُحسِّن تجربة Claude.ai للمستخدمين الناطقين بالعربية.
+أول إصدار عام من Claude RTL Responder — إضافة متصفح (Firefox و Chrome) تُحسِّن تجربة Claude.ai للمستخدمين الناطقين بالعربية.
 
 ### Added / المُضاف
 
@@ -54,6 +84,7 @@ The first public release of Claude RTL Responder — a Firefox extension that en
 
 - **Manifest Version** — MV3 (Manifest V3)
 - **Firefox Minimum** — 109+
+- **Chrome Minimum** — 88+
 - **Architecture** — Isolated modules (detector, observer, content, background, popup, options)
 - **Performance** — RAF-debounced MutationObserver, WeakSet tracking for processed elements
 - **Storage** — `browser.storage.local` with real-time broadcasting to active tabs
@@ -72,6 +103,7 @@ The first public release of Claude RTL Responder — a Firefox extension that en
 
 | Version | Date | Highlights |
 |:--------|:-----|:-----------|
+| **0.1.1** | 2026-04-19 | Cross-browser support (Chrome, Edge), build system, restructured project |
 | **0.1.0** | 2026-04-18 | Initial release with full RTL support, customization options, and bilingual UI |
 
 ---

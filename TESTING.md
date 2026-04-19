@@ -6,36 +6,64 @@ Follow these steps to verify the extension scaffold is working correctly.
 
 ---
 
-### Step 1: Load the Extension
+### Step 1: Build the Extension
 
+```bash
+# Build for Firefox
+node scripts/build.js firefox
+
+# Build for Chrome
+node scripts/build.js chrome
+
+# Build both
+node scripts/build.js all
+```
+
+---
+
+### Step 2: Load the Extension
+
+**Firefox:**
 1. Open Firefox
 2. Navigate to `about:debugging#/runtime/this-firefox`
 3. Click **"Load Temporary Add-on..."**
-4. Navigate to `claude-rtl-responder` folder
+4. Navigate to `dist/firefox/` folder
 5. Select `manifest.json` and click **Open**
 
+**Chrome/Edge:**
+1. Open Chrome/Edge
+2. Navigate to `chrome://extensions` (or `edge://extensions`)
+3. Enable **"Developer mode"** (top right toggle)
+4. Click **"Load unpacked"**
+5. Select the `dist/chrome/` folder
+
 **Expected Result:**
-- Extension appears in the list of Temporary Extensions
+- Extension appears in the extensions list
 - No error messages appear
 - Extension shows name "Claude RTL Responder" and version "0.1.0"
 
 ---
 
-### Step 2: Check Browser Console for Errors
+### Step 3: Check Browser Console for Errors
 
+**Firefox:**
 1. Press `Ctrl+Shift+J` (or `Cmd+Shift+J` on Mac) to open Browser Console
 2. Look for any red error messages related to the extension
-3. Filter by "Claude RTL" if needed
+
+**Chrome/Edge:**
+1. Go to `chrome://extensions` → find Claude RTL Responder → click "service worker"
+2. Or press `F12` on any page → Console tab
+3. Look for any red error messages
 
 **Expected Result:**
 - No errors related to the extension
-- May see general Firefox messages (these are OK)
+- May see general browser messages (these are OK)
 
 ---
 
-### Step 3: Verify Toolbar Icon
+### Step 4: Verify Toolbar Icon
 
-1. Look at the Firefox toolbar (top right area)
+1. Look at the browser toolbar (top right area)
 2. Find the extension icon (blue square with Arabic letter "ع")
 
 **Expected Result:**
@@ -43,15 +71,17 @@ Follow these steps to verify the extension scaffold is working correctly.
 - Icon displays correctly (blue background, white Arabic letter)
 
 If icon is not visible:
-- Click the puzzle piece icon (Extensions menu)
-- Find "Claude RTL Responder" and pin it to toolbar
+- **Firefox:** Click the puzzle piece icon → Find "Claude RTL Responder" → Pin it
+- **Chrome/Edge:** Click the puzzle piece icon → Pin "Claude RTL Responder"
 
 ---
 
-### Step 4: Test Content Script Injection
+### Step 5: Test Content Script Injection
 
 1. Navigate to https://claude.ai (log in if needed)
-2. Press `Ctrl+Shift+K` (or `Cmd+Option+K` on Mac) to open Web Console
+2. Open DevTools Console:
+   - **Firefox:** `Ctrl+Shift+K` (or `Cmd+Option+K` on Mac)
+   - **Chrome/Edge:** `Ctrl+Shift+J` (or `Cmd+Option+J` on Mac)
 3. Look for messages starting with `[Claude RTL Responder]`
 
 **Expected Result:**
@@ -64,7 +94,7 @@ If icon is not visible:
 
 ---
 
-### Step 5: Test Popup
+### Step 6: Test Popup
 
 1. Click the extension icon in the toolbar
 2. Popup should open
@@ -1202,11 +1232,13 @@ After Phase 3.A Part 1 passes, verify the Developer section and Documentation bu
 
 ## Quick Verification Checklist
 
-Copy and fill in after testing:
+Copy and fill in after testing. **Test in BOTH Firefox and Chrome/Edge:**
 
 ```
 Phase 0:
-[ ] Extension loads without errors
+[ ] Build succeeds (node scripts/build.js all)
+[ ] Extension loads without errors (Firefox)
+[ ] Extension loads without errors (Chrome/Edge)
 [ ] No errors in Browser Console
 [ ] Toolbar icon displays correctly
 [ ] Content script logs initialization messages
@@ -1322,7 +1354,9 @@ Phase 3.A Part 2 (About the Developer Section):
    - `[data-is-streaming]` for streaming content
    - `.font-claude-message` for message text
 3. Try hard-refreshing: `Ctrl+Shift+R`
-4. Reload extension in `about:debugging`
+4. Reload extension:
+   - **Firefox:** `about:debugging` → Reload
+   - **Chrome/Edge:** `chrome://extensions` → Reload icon
 
 ### Code blocks appear RTL
 

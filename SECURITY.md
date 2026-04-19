@@ -23,9 +23,11 @@ We take the security of our users seriously. Claude RTL Responder is designed wi
 
 ## 🛡️ Supported Versions | الإصدارات المدعومة
 
-| Version | Supported | Status |
-|---------|-----------|--------|
-| 0.1.x   | ✅ Yes    | Current Release |
+| Version | Browser | Supported | Status |
+|---------|---------|-----------|--------|
+| 0.1.x   | Firefox 109+ | ✅ Yes | Current Release |
+| 0.1.x   | Chrome 88+ | ✅ Yes | Current Release |
+| 0.1.x   | Edge (Chromium) | ✅ Yes | Current Release |
 
 ---
 

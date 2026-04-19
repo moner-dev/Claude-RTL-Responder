@@ -103,7 +103,7 @@ Found a bug? Help us fix it!
 
 **Environment:**
 - Extension Version:
-- Firefox Version:
+- Browser: [Firefox/Chrome/Edge] Version:
 - OS:
 ```
 
@@ -179,7 +179,8 @@ Help us reach more users by translating the extension to other languages.
 
 ### Prerequisites | المتطلبات
 
-- Firefox Browser (latest version)
+- Firefox Browser 109+ OR Chrome 88+ OR Edge (Chromium)
+- Node.js 14+ (for building)
 - Git
 - Code editor (VS Code recommended)
 
@@ -203,10 +204,18 @@ git checkout -b feature/your-feature-name
 
 ### Loading the Extension | تحميل الإضافة
 
-1. Open Firefox
-2. Navigate to `about:debugging#/runtime/this-firefox`
+**Firefox:**
+1. Run `node scripts/build.js firefox` to build
+2. Open Firefox → `about:debugging#/runtime/this-firefox`
 3. Click "Load Temporary Add-on..."
-4. Select `manifest.json` from the project folder
+4. Select `manifest.json` from `dist/firefox/`
+
+**Chrome/Edge:**
+1. Run `node scripts/build.js chrome` to build
+2. Open Chrome → `chrome://extensions` (or `edge://extensions`)
+3. Enable "Developer mode"
+4. Click "Load unpacked"
+5. Select the `dist/chrome/` folder
 
 ### Development Workflow | سير العمل
 
@@ -233,34 +242,50 @@ git push origin feature/amazing-feature
 
 ```
 claude-rtl-responder/
-├── manifest.json          # Extension manifest (v3)
-├── content/
-│   ├── content.js         # Main content script
-│   └── content.css        # RTL styles for Claude.ai
-├── options/
-│   ├── options.html       # Settings page structure
-│   ├── options.css        # Settings page styles
-│   └── options.js         # Settings page logic
-├── icons/
-│   ├── icon-48.png        # Toolbar icon
-│   └── icon-96.png        # High-res icon
-├── docs/                   # Additional documentation
-├── README.md              # Project overview
-├── LICENSE                # MIT License
-├── CHANGELOG.md           # Version history
-├── INSTALL.md             # Installation guide
-├── SECURITY.md            # Security policy
-└── CONTRIBUTING.md        # This file
+├── src/                          # Extension source files
+│   ├── manifest.firefox.json     # Firefox manifest (MV3)
+│   ├── manifest.chrome.json      # Chrome manifest (MV3)
+│   ├── background.js             # Service worker
+│   ├── common/
+│   │   └── browser-polyfill.js   # Cross-browser API polyfill
+│   ├── content/
+│   │   ├── detector.js           # Arabic text detection
+│   │   ├── observer.js           # DOM mutation observer
+│   │   └── content.js            # Main content script
+│   ├── popup/
+│   │   ├── popup.html            # Popup UI
+│   │   ├── popup.css             # Popup styles
+│   │   └── popup.js              # Popup logic
+│   ├── options/
+│   │   ├── options.html          # Settings page
+│   │   ├── options.css           # Settings styles
+│   │   └── options.js            # Settings logic
+│   ├── styles/
+│   │   └── rtl.css               # RTL injection styles
+│   └── icons/
+│       ├── icon-48.png           # Toolbar icon
+│       └── icon-96.png           # High-DPI icon
+├── scripts/
+│   └── build.js                  # Cross-browser build script
+├── dist/                         # Build output (gitignored)
+├── package.json                  # Build configuration
+├── README.md                     # Project overview
+├── LICENSE                       # MIT License
+├── CHANGELOG.md                  # Version history
+├── INSTALL.md                    # Installation guide
+├── SECURITY.md                   # Security policy
+└── CONTRIBUTING.md               # This file
 ```
 
 ### Key Files | الملفات الرئيسية
 
 | File | Purpose | الغرض |
 |------|---------|-------|
-| `manifest.json` | Extension configuration | إعدادات الإضافة |
-| `content/content.js` | RTL detection & styling | كشف وتنسيق RTL |
-| `content/content.css` | RTL CSS styles | أنماط CSS للـ RTL |
-| `options/options.js` | Settings management | إدارة الإعدادات |
+| `src/manifest.*.json` | Browser-specific manifests | ملفات manifest للمتصفحات |
+| `src/common/browser-polyfill.js` | Cross-browser API | واجهة موحدة للمتصفحات |
+| `src/content/content.js` | RTL detection & styling | كشف وتنسيق RTL |
+| `src/options/options.js` | Settings management | إدارة الإعدادات |
+| `scripts/build.js` | Build script | سكريبت البناء |
 
 ---
 
@@ -389,7 +414,8 @@ git commit -m "refactor(content): simplify Arabic detection logic"
 
 - [ ] Code follows project style guidelines
 - [ ] Self-reviewed the changes
-- [ ] Tested in Firefox
+- [ ] Tested in Firefox AND Chrome/Edge
+- [ ] Build succeeds (`node scripts/build.js all`)
 - [ ] Updated documentation if needed
 - [ ] No console errors or warnings
 - [ ] Commit messages follow guidelines
@@ -479,11 +505,11 @@ Closes #[issue number]
 
 <div dir="rtl">
 
-قبل إرسال التغييرات، تأكد من اختبار:
+قبل إرسال التغييرات، تأكد من اختبار في Firefox و Chrome:
 
 </div>
 
-Before submitting changes, test the following:
+Before submitting changes, test the following in **both Firefox and Chrome**:
 
 #### Content Script Tests
 - [ ] Arabic text displays RTL correctly
