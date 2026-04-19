@@ -61,7 +61,7 @@ We take the security of our users seriously. Claude RTL Responder is designed wi
 - Click "Report a vulnerability"
 
 **Option 2: Direct Contact**
-- 📧 Email: [security@moner.dev](mailto:security@moner.dev)
+- 📧 Email: [moner.intelligence@gmail.com](mailto:moner.intelligence@gmail.com)
 
 ---
 
